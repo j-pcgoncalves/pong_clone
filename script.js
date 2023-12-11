@@ -173,7 +173,7 @@ function computerAI() {
 
 function showGameOverEl(winner) {
   // Hide Canvas
-  canvas.hidden = "true";
+  canvas.hidden = true;
 
   // Container
   gameOverEl.textContent = '';
@@ -215,12 +215,13 @@ function animate() {
 
 // Start Game, Reset Everything
 function startGame() {
-  // if (isGameOver && !isNewGame) {
+  if (isGameOver && !isNewGame) {
+    body.removeChild(gameOverEl);
+    canvas.hidden = false;
+  }
 
-
-  // }
   isGameOver = false;
-  // isNewGame = ;
+  isNewGame = false;
   playerScore = 0;
   computerScore = 0;
   ballReset();
